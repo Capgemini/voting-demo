@@ -1,0 +1,55 @@
+{
+  "id": "voting-demo",
+  "apps": [
+    {
+      "id": "redis",
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "redis",
+          "network": "BRIDGE"
+        }
+      },
+      "env": {
+        "SERVICE_NAME": "voting-demo-redis",
+        "SERVICE_TAGS": "voting-demo"
+      },
+      "cpus": 0.2,
+      "mem": 128.0,
+      "instances": 1
+    },
+    {
+      "id": "nodejs",
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "capgemini/voting-demo",
+          "network": "BRIDGE",
+          "portMappings": [{
+            "containerPort": 80,
+            "hostPort": 0,
+            "protocol": "tcp"
+          }]
+        }
+      },
+      "env": {
+        "SERVICE_NAME": "voting-demo-nodejs",
+        "SERVICE_TAGS": "voting-demo",
+        "REDIS_HOST": "redis"
+      },
+      "cpus": 1,
+      "mem": 512.0,
+      "instances": 1,
+      "healthChecks": [{
+        "path": "/",
+        "portIndex": 0,
+        "protocol": "HTTP",
+        "gracePeriodSeconds": 30,
+        "intervalSeconds": 10,
+        "timeoutSeconds": 20,
+        "maxConsecutiveFailures": 3
+      }],
+      "dependencies": ["/voting-demo/redis"]
+    }
+  ]
+}
