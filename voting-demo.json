@@ -11,7 +11,7 @@
         }
       },
       "env": {
-        "SERVICE_NAME": "voting-demo-redis",
+        "SERVICE_NAME": "redis",
         "SERVICE_TAGS": "voting-demo"
       },
       "cpus": 0.2,
@@ -25,6 +25,7 @@
         "docker": {
           "image": "capgemini/voting-demo",
           "network": "BRIDGE",
+          "forcePullImage": true,
           "portMappings": [{
             "containerPort": 80,
             "hostPort": 0,
@@ -37,9 +38,9 @@
         "SERVICE_TAGS": "voting-demo",
         "REDIS_HOST": "redis"
       },
-      "cpus": 1,
+      "cpus": 0.2,
       "mem": 512.0,
-      "instances": 1,
+      "instances": 3,
       "healthChecks": [{
         "path": "/",
         "portIndex": 0,

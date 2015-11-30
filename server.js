@@ -9,6 +9,8 @@ var express = require('express'),
     redis = require('redis'),
     io = require('socket.io')(server);
 
+io.set({transports: ['websocket']});
+
 var port = process.env.SERVER_PORT || 80;
 var redisPort = process.env.REDIS_PORT || 6379;
 var redisHost = process.env.REDIS_HOST || 'votingdemo_redis_1';

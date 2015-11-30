@@ -22,8 +22,8 @@
 
         <h3>{{option_a}} vs {{option_b}}!</h3>
         <form id="choice" name='form'>
-          <button id="a" type="submit" name="vote" class="a" value="a" ng-click="sendVote('a')">Cats</button>
-          <button id="b" type="submit" name="vote" class="b" value="b" ng-click="sendVote('b')">Dogs</button>
+          <button id="a" type="submit" name="vote" class="a" value="a" ng-click="sendVote('a')">{{option_a}}</button>
+          <button id="b" type="submit" name="vote" class="b" value="b" ng-click="sendVote('b')">{{option_b}}</button>
         </form>
         <div id="tip">
           (Tip: Vote as many times as you like!)
