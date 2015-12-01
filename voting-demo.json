@@ -37,7 +37,7 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "capgemini/voting-demo",
+          "image": "capgemini/voting-demo:0.1.0",
           "network": "BRIDGE",
           "forcePullImage": true,
           "portMappings": [{
@@ -54,8 +54,7 @@
       },
       "cpus": 0.2,
       "mem": 512.0,
-      "constraints": [["hostname", "UNIQUE"]],
-      "instances": 3,
+      "instances": 6,
       "healthChecks": [{
         "path": "/",
         "portIndex": 0,
