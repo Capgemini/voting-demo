@@ -6,8 +6,8 @@ var bg2 = document.getElementById('background-stats-2');
 
 app.controller('statsCtrl', function($scope){
 
-  $scope.option_a = 'Orange';
-  $scope.option_b = 'Lemon';
+  $scope.option_a = 'Apple';
+  $scope.option_b = 'Microsoft';
 
   var animateStats = function(percentA, percentB){
     bg1.style.width= percentA+"%";
