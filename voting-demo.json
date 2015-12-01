@@ -37,7 +37,7 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "capgemini/voting-demo:0.1.0",
+          "image": "capgemini/voting-demo",
           "network": "BRIDGE",
           "forcePullImage": true,
           "portMappings": [{
