@@ -15,7 +15,7 @@ var port = process.env.SERVER_PORT || 80;
 var redisPort = process.env.REDIS_SERVICE_PORT || 6379;
 var redisHost = process.env.REDIS_SERVICE_HOST || 'redis';
 
-var redisClient = redis.createClient(port: redisPort, host: redisHost);
+var redisClient = redis.createClient({ port: redisPort, host: redisHost});
 
 io.sockets.on('connection', function (socket) {
 
