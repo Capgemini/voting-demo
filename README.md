@@ -9,7 +9,7 @@ Running
 -------
 
 ```
-docker-compose --x-networking up -d
+docker-compose up
 ```
 
 The app will be running on port 5001.
